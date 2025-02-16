@@ -1,0 +1,27 @@
+title: Cole McIntosh
+description: AI and Data Engineer based in Denver, Colorado, specializing in developing cutting-edge AI systems and data solutions.
+theme: jekyll-theme-minimal
+show_downloads: true
+logo: https://github.com/colesmcintosh.png
+
+# Social links
+social_links:
+  github: colesmcintosh
+  linkedin: colemcintosh
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-remote-theme
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Exclude files from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/ 

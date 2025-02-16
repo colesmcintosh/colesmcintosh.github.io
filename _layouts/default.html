@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
+    {% seo %}
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        {% if site.logo %}
+        <img src="{{site.logo | relative_url}}" alt="Profile" class="profile-img" />
+        {% endif %}
+        
+        <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
+        
+        {% if site.description %}
+        <p>{{ site.description }}</p>
+        {% endif %}
+
+        <div class="social-links">
+          {% if site.social_links.github %}
+          <a href="https://github.com/{{ site.social_links.github }}" target="_blank">
+            <span class="social-icon">📂</span>
+            <span class="social-text">GitHub</span>
+          </a>
+          {% endif %}
+          
+          {% if site.social_links.linkedin %}
+          <a href="https://linkedin.com/in/{{ site.social_links.linkedin }}" target="_blank">
+            <span class="social-icon">💼</span>
+            <span class="social-text">LinkedIn</span>
+          </a>
+          {% endif %}
+          
+          {% if site.social_links.email %}
+          <a href="mailto:{{ site.social_links.email }}">
+            <span class="social-icon">📧</span>
+            <span class="social-text">Email</span>
+          </a>
+          {% endif %}
+        </div>
+      </header>
+
+      <section>
+        <div class="projects-container">
+            
+            <!-- Projects Section -->
+            <section class="projects-section">
+                <h2 class="section-header">
+                    <span class="section-icon">🔥</span>
+                    Most Recent Projects I've Worked On
+                </h2>
+                <div class="repository-grid">
+                    {% assign sorted_repos = site.github.public_repositories | sort: "pushed_at" | reverse %}
+                    {% for repository in sorted_repos limit:5 %}
+                    <article class="repository-card">
+                        <div class="repository-header">
+                            <h3 class="repository-title">
+                                <a href="{{ repository.html_url }}" target="_blank" class="repository-link">
+                                    {{ repository.name }}
+                                </a>
+                            </h3>
+                        </div>
+                        {% if repository.description %}
+                        <p class="repository-description">{{ repository.description }}</p>
+                        {% endif %}
+                        <div class="repository-meta">
+                        </div>
+                    </article>
+                    {% endfor %}
+                </div>
+            </section>
+            <!-- Blog Posts Section
+            <section class="blog-section">
+              <h2 class="section-header">
+                <span class="section-icon">📝</span>
+                Latest Blog Posts
+              </h2>
+              <div class="posts-grid">
+                {% for post in site.posts limit:5 %}
+                  <article class="post-card">
+                    <div class="post-header">
+                      <h3 class="post-title">
+                        <a href="{{ post.url | relative_url }}" class="post-link">
+                          {{ post.title }}
+                        </a>
+                      </h3>
+                      <span class="post-date">{{ post.date | date: "%B %d, %Y" }}</span>
+                    </div>
+                    {% if post.excerpt %}
+                      <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+                    {% endif %}
+                    <!-- <div class="post-categories">
+                      {% for category in post.categories %}
+                        <span class="category-tag">{{ category }}</span>
+                      {% endfor %}
+                    </div> -->
+                  </article>
+                {% endfor %}
+              </div>
+            </section> -->
+        </div>
+      </section>
+
+      <footer>
+        <p>© {{ site.time | date: '%Y' }} {{ site.title }}. Maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
+      </footer>
+    </div>
+    <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
+  </body>
+</html> 
