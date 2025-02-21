@@ -20,6 +20,8 @@
         <p>{{ site.description }}</p>
         {% endif %}
 
+        <hr class="section-divider">
+
         <div class="social-links">
           {% if site.social_links.github %}
           <a href="https://github.com/{{ site.social_links.github }}" target="_blank">
@@ -53,6 +55,7 @@
                     <span class="section-icon">🔥</span>
                     Most Recent Projects I've Worked On
                 </h2>
+                <hr class="section-divider">
                 <div class="repository-grid">
                     {% assign sorted_repos = site.github.public_repositories | sort: "pushed_at" | reverse %}
                     {% for repository in sorted_repos limit:5 %}
@@ -73,6 +76,9 @@
                     {% endfor %}
                 </div>
             </section>
+
+            <hr class="section-divider">
+
             <!-- Blog Posts Section
             <section class="blog-section">
               <h2 class="section-header">

@@ -25,6 +25,14 @@ body {
   line-height: 1.5;
 }
 
+// Section divider
+.section-divider {
+  border: 0;
+  height: 1px;
+  background-color: var(--color-border);
+  margin: calc(var(--spacing-base) * 1.5) 0;
+}
+
 // Profile styles
 .profile-img {
   width: 200px;
