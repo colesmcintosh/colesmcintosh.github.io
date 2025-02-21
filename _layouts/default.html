@@ -58,7 +58,7 @@
                 <hr class="section-divider">
                 <div class="repository-grid">
                     {% assign sorted_repos = site.github.public_repositories | sort: "pushed_at" | reverse %}
-                    {% for repository in sorted_repos limit:5 %}
+                    {% for repository in sorted_repos limit:7 %}
                     <article class="repository-card">
                         <div class="repository-header">
                             <h3 class="repository-title">
